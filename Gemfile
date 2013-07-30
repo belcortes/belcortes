@@ -7,14 +7,13 @@ gem 'rails', '4.0.0'
 gem 'pg'
 gem 'wicked'
 gem 'haml'
-gem 'devise'
-
+gem 'bcrypt-ruby'
 gem 'jquery-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
-# Use Uglifier as compressor for JavaScript assets
+# Use Uglifier as compressor for JavaSc ript assets
 gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
@@ -44,6 +43,17 @@ end
 
 group :development do
   gem 'better_errors'
+end
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'database_cleaner'
+  gem 'guard-rspec'
+  gem 'faker'
 end
 
 
