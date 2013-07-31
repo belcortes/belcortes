@@ -7,7 +7,7 @@ gem 'rails', '4.0.0'
 gem 'pg'
 gem 'wicked'
 gem 'haml'
-gem 'bcrypt-ruby'
+gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'jquery-rails'
 
 # Use SCSS for stylesheets
@@ -39,6 +39,9 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'binding_of_caller'
   gem 'meta_request'
+  gem 'faker'
+  gem 'factory_girl_rails'
+
 end
 
 group :development do
