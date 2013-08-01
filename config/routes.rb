@@ -4,7 +4,10 @@ Calcacademy::Application.routes.draw do
   root 'home#index'
 
   resources :users
-
+  resources :subjects
+  resources :topics
+  resources :subtopics
+  resources :questions
   get 'sessions/new' => 'sessions#new'
   post 'sessions' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
@@ -30,10 +33,9 @@ Calcacademy::Application.routes.draw do
   #   end
 
   # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
+    # resources :subjects do
+    #   resources :topics
+    # end
 
   # Example resource route with more complex sub-resources:
   #   resources :products do

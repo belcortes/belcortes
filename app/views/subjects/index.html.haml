@@ -1,0 +1,5 @@
+%h1 Subjects
+
+- @subjects.each do |subject|
+  .subject
+    = link_to subject.name, topics_path+"?subject_id=#{subject.id}"

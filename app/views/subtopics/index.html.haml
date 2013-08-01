@@ -1,0 +1,5 @@
+%h1 Subtopics
+
+- @subtopics.each do |subtopic|
+  .topic
+    = link_to subtopic.name, questions_path+"?subtopic_id=#{subtopic.id}"

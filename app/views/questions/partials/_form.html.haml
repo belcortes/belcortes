@@ -1,0 +1,6 @@
+= form_for @question do |f|
+  = f.label :content
+  = f.text_field :content
+  = f.label :subtopic
+  = f.collection_select(:subtopic_id, Subtopic.all, :id, :name)
+  = f.submit

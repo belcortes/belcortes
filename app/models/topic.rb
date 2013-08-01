@@ -1,5 +1,8 @@
 class Topic < ActiveRecord::Base
 
-  has_many :questions, :dependent => :destroy
+  has_many :subtopics, :dependent => :destroy
   belongs_to :subject
+
+  validates :name, presence: true
+
 end
