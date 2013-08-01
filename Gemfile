@@ -59,6 +59,11 @@ group :test do
   gem 'faker'
 end
 
+group :production do
+  #REQUIRED for Rails 4.0 on Heroku!
+  gem 'rails_12factor'
+end
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
