@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :ensure_admin, only: [:index, :edit, :update, :destroy]
+  before_action :ensure_admin, only: [:index, :edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update_attributes(params[:user])
+    if @user.update_attributes(user_params)
       redirect_to user_path(@user)
     else
       render :edit
@@ -27,8 +27,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new(user_params)
     if @user.save
+      session[:user_id] = @user.id
       redirect_to users_path
     else
       render :new
@@ -39,6 +40,11 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     user.destroy
     redirect_to :back
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :admin)
   end
 
 end
