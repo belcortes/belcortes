@@ -1,0 +1,42 @@
+.navbar {
+  height: 40px;
+  width: 100%;
+  background-color: black;
+}
+
+#logo {
+  float: left;
+  color: white;
+  line-height: 40px;
+  margin-left: 20px;
+}
+#navigation {
+  float: right;
+  color: white;
+  line-height: 40px;
+  margin-right: 20px;
+}
+
+#main-container {
+  width: 95%;
+  margin: 0 auto;
+  height: auto;
+}
+
+
+/*.questions-container {
+  width: 95%;
+  height: auto;
+  margin: 0 auto;
+}*/
+
+.instructions {
+  float: left;
+  border: 1px solid black;
+  height: 500px;
+}
+.input {
+  float: right;
+  border: 1px solid black;
+  height: 500px;
+}
