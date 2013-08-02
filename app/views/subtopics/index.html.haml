@@ -2,4 +2,4 @@
 
 - @subtopics.each do |subtopic|
   .topic
-    = link_to subtopic.name, questions_path+"?subtopic_id=#{subtopic.id}"
+    = link_to subtopic.name, questions_path+"?subtopic_name=#{subtopic.name}"

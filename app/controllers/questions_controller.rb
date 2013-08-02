@@ -1,7 +1,9 @@
 class QuestionsController < ApplicationController
 
   def index
-    @questions = Question.where(:subtopic_id => params[:subtopic_id])
+    @subtopic = Subtopic.find_by_name(params[:subtopic_name])
+    @questions = @subtopic.questions
+    # @questions = Question.where(:subtopic_id => params[:subtopic_id])
   end
 
   def edit

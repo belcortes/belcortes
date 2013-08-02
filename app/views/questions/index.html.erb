@@ -1,0 +1,69 @@
+
+
+<script >
+var blah = {}
+var questions = <%= @questions.to_json.html_safe %>;
+$.fn.bels_awesome_func = function(e){
+  // e.preventDefault();
+  var user_answer = $('input').val();
+  // use ajax call to get correct answer - build showpage for answers in order to do so
+  console.log(this)
+  var question_id = this.parent().data('id')
+  console.log(question_id)
+
+  var actual_answer = " "
+  var answers_array = []
+  var button = this;
+
+  $.ajax({
+    type: "GET",
+    dataType: "JSON", 
+    url: "/answers?question_id="+question_id,
+    // data: question_id,
+    success: function(data){
+      // console.log(data)
+      // may get more than 1 answer back
+      answers_array = data
+      actual_answer = data[0].content
+      
+    if (user_answer === actual_answer.toString()){
+
+      $(button).parent().next('.question').show();
+      $(button).parent().hide();
+    };
+    }
+  })
+    console.log("outside ajax", answers_array)
+    console.log('hello', user_answer)
+    console.log('goodbye', actual_answer)
+
+  
+};
+
+$(function() {
+  $('.button').on('click', function() {
+    $(this).bels_awesome_func();
+  });
+});
+
+</script>
+
+<h1> Questions</h1>
+
+
+
+<div class='row questions-container'>
+  <div class='instructions five columns'>
+    Content
+    <% @questions.order(:id).each_with_index do |question, index| %>
+      <div data-id='<%= question.id %>' class='question <%= "#{'hidden' if index != 0}" %>'>
+        <%= question.content %>
+        </br>
+        <button class='button'>
+          Submit
+        </button>
+      </div>
+    <% end %>
+  </div>
+  <input class='input seven columns'/><button class='button'>Submit</button>
+</div>

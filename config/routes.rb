@@ -8,6 +8,7 @@ Calcacademy::Application.routes.draw do
   resources :topics
   resources :subtopics
   resources :questions
+  resources :answers
   get 'sessions/new' => 'sessions#new'
   post 'sessions' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'

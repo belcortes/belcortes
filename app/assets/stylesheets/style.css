@@ -22,13 +22,12 @@
   margin: 0 auto;
   height: auto;
 }
-
-
-/*.questions-container {
-  width: 95%;
-  height: auto;
-  margin: 0 auto;
-}*/
+/*a {
+  color: white;*/
+}
+.navbar, a, a:visited {
+  color: white;
+}
 
 .instructions {
   float: left;
@@ -39,4 +38,9 @@
   float: right;
   border: 1px solid black;
   height: 500px;
+  width: 30%;
+}
+
+.hidden {
+  display: none;
 }

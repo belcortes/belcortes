@@ -1,0 +1,7 @@
+%h1 Answers
+
+- @answers.each do |answer|
+  .answer
+    = answer.content
+    = answer.is_correct
+    = answer.question_id
