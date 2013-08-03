@@ -33,12 +33,13 @@
   float: left;
   border: 1px solid black;
   height: 500px;
+  width: 35%;
 }
 .input {
   float: right;
   border: 1px solid black;
   height: 500px;
-  width: 30%;
+  width: 60%;
 }
 
 .hidden {

@@ -11,7 +11,14 @@
     <div id='logo'><a href="/">Calcacademy</a></div>
     <div id='navigation'>
       <a href="/users/new">Login</a>
-      <a href="/subjects">Learn</a>
+      <% if current_user %> 
+        <a href="#">Logout</a>
+      <% end %>
+      <% if current_user %>
+        <a href="/subjects">Learn</a>
+      <% else %>
+         <%= link_to '', '/users/new' %>
+      <% end %>
     </div>
   </div>
 

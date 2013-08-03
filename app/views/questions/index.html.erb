@@ -1,5 +1,4 @@
 
-
 <script >
 var blah = {}
 var questions = <%= @questions.to_json.html_safe %>;
@@ -25,19 +24,16 @@ $.fn.bels_awesome_func = function(e){
       // may get more than 1 answer back
       answers_array = data
       actual_answer = data[0].content
-      
+      //REFACTOR!!!!!!!!!!! 
     if (user_answer === actual_answer.toString()){
 
       $(button).parent().next('.question').show();
       $(button).parent().hide();
+    } else {
+      alert('Sorry, the answer is incorrect please try again')
     };
     }
   })
-    console.log("outside ajax", answers_array)
-    console.log('hello', user_answer)
-    console.log('goodbye', actual_answer)
-
-  
 };
 
 $(function() {
@@ -65,5 +61,6 @@ $(function() {
       </div>
     <% end %>
   </div>
-  <input class='input seven columns'/><button class='button'>Submit</button>
+  <input class='input seven columns'/>
+  <!-- <button class='button'>Submit</button> -->
 </div>
