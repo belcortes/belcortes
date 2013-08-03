@@ -1,15 +1,11 @@
 class AnswersController < ApplicationController
-
+  before_action :ensure_admin, only: [:index, :edit, :update, :destroy, :new, :create]
   def index
     @question = Question.find_by_id(params[:question_id])
     @answers = @question.answers
     # @answers = Answer.all
     # @answers = Question.where(:question_id => params[:question_id])
     render :json => @answers.to_json
-  end
-
-  def show
-
   end
 
   def edit
@@ -35,6 +31,12 @@ class AnswersController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    answer = Answer.find(params[:id])
+    answer.destroy
+    redirect_to :back
   end
 
     private

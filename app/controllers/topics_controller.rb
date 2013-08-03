@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-
+  before_action :ensure_admin, only: [:edit, :update, :destroy, :new, :create]
   def index
     @topics = Topic.where(:subject_id => params[:subject_id])
   end
@@ -11,7 +11,7 @@ class TopicsController < ApplicationController
   def update
     @topic = Topic.find(params[:id])
     if @topic.update_attributes(topic_params)
-      redirect_to topics_path
+      redirect_to subjects_path
     else
       render :edit
     end
@@ -27,6 +27,12 @@ class TopicsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    topic = Topic.find(params[:id])
+    topic.destroy
+    redirect_to :back
   end
 
   private

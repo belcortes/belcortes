@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-
+  before_action :ensure_admin, only: [:edit, :update, :destroy, :new, :create]
   def index
     @subtopic = Subtopic.find_by_name(params[:subtopic_name])
     @questions = @subtopic.questions

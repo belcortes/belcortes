@@ -1,7 +1,9 @@
 class SubjectsController < ApplicationController
-
+  before_action :ensure_admin, only: [:edit, :update, :destroy, :new, :create]
+  before_action :current_user #, only: [:edit, :update, :destroy, :new, :create]
   def index
     @subjects = Subject.all
+    p @subjects
   end
 
   def edit
@@ -27,6 +29,11 @@ class SubjectsController < ApplicationController
     else
       render :new
     end
+  end
+  def destroy
+    subject = Subject.find(params[:id])
+    subject.destroy
+    redirect_to :back
   end
 
   private

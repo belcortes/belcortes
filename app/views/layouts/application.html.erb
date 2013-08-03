@@ -10,19 +10,13 @@
   <div class='navbar'>
     <div id='logo'><a href="/">Calcacademy</a></div>
     <div id='navigation'>
-      <a href="/users/new">Login</a>
+      <a href="/sessions/new">Login</a>
       <% if current_user %> 
-        <a href="#">Logout</a>
+        <%= link_to 'Logout', logout_path, method: :delete%>
       <% end %>
-      <% if current_user %>
         <a href="/subjects">Learn</a>
-      <% else %>
-         <%= link_to '', '/users/new' %>
-      <% end %>
     </div>
   </div>
-
-  
   
 <div id='main-container'>
   <%= yield %>

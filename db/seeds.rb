@@ -21,7 +21,7 @@ subtopic2 = Subtopic.create(name: 'Exponents')
 subtopic3 = Subtopic.create(name: 'Derivatives')
 
 question1 = Question.create(content: 'What is 1+1?')
-question2 = Question.create(content: 'What is 2 * 3?')
+question2 = Question.create(content: 'What is 2 * 3?')  
 
 answer1 = Answer.create(content: 2, is_correct: true)
 answer2 = Answer.create(content: 6, is_correct: false)
