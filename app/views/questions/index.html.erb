@@ -1,7 +1,7 @@
-
 <script >
 var blah = {}
 var questions = <%= @questions.to_json.html_safe %>;
+var last_question = questions[questions.length - 1];
 $.fn.bels_awesome_func = function(e){
   // e.preventDefault();
   var user_answer = $('input').val();

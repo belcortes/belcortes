@@ -18,7 +18,7 @@ class SubjectsController < ApplicationController
       render :edit
     end
   end
-
+  # var last_question = questions[questions.length - 1];
   def new
     @subject = Subject.new
   end
