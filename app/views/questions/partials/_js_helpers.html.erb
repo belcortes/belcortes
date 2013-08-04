@@ -1,4 +1,5 @@
 <script >
+<% if current_user %>
 var blah = {}
 var questions = <%= @questions.to_json.html_safe %>;
 var last_question = questions[questions.length - 1];
@@ -6,6 +7,7 @@ var current_score = <%= current_user.score %>
 var badge = 0
 var subtopic_id = questions[0].subtopic_id
 console.log(subtopic_id)
+
 
 // ==============GLOBAL HELPER FUNCTIONS ============
 
@@ -75,5 +77,5 @@ $(function() {
   });
   $('#points').append(current_score);
 });
-
+<% end %>
 </script>
