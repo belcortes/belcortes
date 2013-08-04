@@ -4,6 +4,7 @@ Calcacademy::Application.routes.draw do
   root 'home#index'
 
   resources :users
+  post '/add_score' => 'users#add_score'
   resources :subjects
   resources :topics
   resources :subtopics

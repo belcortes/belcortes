@@ -1,0 +1,75 @@
+<script >
+var blah = {}
+var questions = <%= @questions.to_json.html_safe %>;
+var last_question = questions[questions.length - 1];
+var current_score = <%= current_user.score %>
+var badge = 0
+
+// ==============GLOBAL HELPER FUNCTIONS ============
+
+// function add_score() {
+//   current_score += 
+// }
+
+// =============== JQUERY/AJAX FUNCTIONS ============
+
+$.fn.bels_awesome_func = function(e){
+  // e.preventDefault();
+  
+  var user_answer = $('input').val();
+  var question_id = this.parent().data('id')
+  var actual_answer = " "
+  var answers_array = []
+  var button = this;
+  console.log(button)
+  $.ajax({
+    type: "GET",
+    // error: function(xhr, status, error){
+    //   console.log(xhr, status, error);
+    // },
+    dataType: "JSON", 
+    url: "/answers?question_id="+question_id,
+    success: function(data){
+      // may get more than 1 answer back
+      answers_array = data
+      actual_answer = data[0].content
+      //REFACTOR!!!!!!!!!!! 
+      if (user_answer === actual_answer.toString()){
+        $(button).parent().next('.question').show();
+        $(button).parent().hide();
+        // score += 10;
+
+        var score_params = {
+          id: <%= current_user.id %>,
+          score_increment: 10
+        }
+        console.log(score_params)
+        $.ajax ({
+          type: 'POST',
+          url: "/add_score",
+          data: score_params,
+          success: function(data){
+            current_score = data.score
+          }
+        });
+        if (last_question.id === question_id){
+          console.log('you are on the last question!')
+          // score += 20;
+          badge += 1;
+        }
+      } else {
+        alert('Sorry, the answer is incorrect please try again')
+      };
+    }
+  })
+ 
+};
+
+$(function() {
+  $('.button').on('click', function() {
+    $(this).bels_awesome_func();
+  });
+  $('#points').append(current_score);
+});
+
+</script>

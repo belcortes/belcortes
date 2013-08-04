@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :ensure_admin, only: [:index, :edit, :update, :destroy]
+  before_action :ensure_admin, only: [:index, :edit, :destroy]
 
   def index
     @users = User.all
@@ -42,9 +42,20 @@ class UsersController < ApplicationController
     redirect_to :back
   end
 
-  private
-  def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :admin)
+  def add_score
+    @user = User.find(params[:id])
+    p @user
+    score = @user.score + params[:score_increment].to_i
+    if @user.update_attribute('score', score)
+      render :json => @user
+    else
+      render :text => 'failed!'
+    end
   end
 
+  private
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :admin, :score)
+    
+  end
 end

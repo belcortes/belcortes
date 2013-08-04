@@ -35,6 +35,15 @@
   height: 500px;
   width: 35%;
 }
+
+#points {
+  width: 40px;
+  height: 40px;
+  border: 1px dashed black;
+  float: right;
+  text-align: center;
+  line-height: 40px;
+}
 .input {
   float: right;
   border: 1px solid black;

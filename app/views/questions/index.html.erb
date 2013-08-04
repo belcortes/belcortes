@@ -1,64 +1,10 @@
-<script >
-var blah = {}
-var questions = <%= @questions.to_json.html_safe %>;
-var last_question = questions[questions.length - 1];
-var score = 0
-
-$.fn.bels_awesome_func = function(e){
-  // e.preventDefault();
-  
-  $('.instruction').append(score);
-  var user_answer = $('input').val();
-  // use ajax call to get correct answer - build showpage for answers in order to do so
-  console.log(this)
-  var question_id = this.parent().data('id')
-  console.log(last_question.id)
-  console.log(question_id)
-
-  var actual_answer = " "
-  var answers_array = []
-  var button = this;
-
-  $.ajax({
-    type: "GET",
-    dataType: "JSON", 
-    url: "/answers?question_id="+question_id,
-    // data: question_id,
-    success: function(data){
-      // console.log(data)
-      // may get more than 1 answer back
-      answers_array = data
-      actual_answer = data[0].content
-      //REFACTOR!!!!!!!!!!! 
-    if (user_answer === actual_answer.toString()){
-
-      $(button).parent().next('.question').show();
-      $(button).parent().hide();
-    } else {
-      alert('Sorry, the answer is incorrect please try again')
-    };
-    }
-  })
-  if (last_question.id === question_id){
-    console.log('you are on the last question!')
-    sco
-  }
-};
-
-$(function() {
-  $('.button').on('click', function() {
-    $(this).bels_awesome_func();
-  });
-});
-
-</script>
+<%= render partial: '/questions/partials/js_helpers' %>
 
 <h1> Questions</h1>
 
-
-
 <div class='row questions-container'>
   <div class='instructions five columns'>
+      <div id='points'></div>
     Content
     <% @questions.order(:id).each_with_index do |question, index| %>
       <div data-id='<%= question.id %>' class='question <%= "#{'hidden' if index != 0}" %>'>
@@ -71,5 +17,4 @@ $(function() {
     <% end %>
   </div>
   <input class='input seven columns'/>
-  <!-- <button class='button'>Submit</button> -->
 </div>
