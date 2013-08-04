@@ -4,12 +4,14 @@ var questions = <%= @questions.to_json.html_safe %>;
 var last_question = questions[questions.length - 1];
 var current_score = <%= current_user.score %>
 var badge = 0
+var subtopic_id = questions[0].subtopic_id
+console.log(subtopic_id)
 
 // ==============GLOBAL HELPER FUNCTIONS ============
 
-// function add_score() {
-//   current_score += 
-// }
+function add_score() {
+  current_score += 10
+}
 
 // =============== JQUERY/AJAX FUNCTIONS ============
 
@@ -21,7 +23,7 @@ $.fn.bels_awesome_func = function(e){
   var actual_answer = " "
   var answers_array = []
   var button = this;
-  console.log(button)
+  console.log(question_id)
   $.ajax({
     type: "GET",
     // error: function(xhr, status, error){
@@ -37,8 +39,6 @@ $.fn.bels_awesome_func = function(e){
       if (user_answer === actual_answer.toString()){
         $(button).parent().next('.question').show();
         $(button).parent().hide();
-        // score += 10;
-
         var score_params = {
           id: <%= current_user.id %>,
           score_increment: 10
@@ -54,6 +54,9 @@ $.fn.bels_awesome_func = function(e){
         });
         if (last_question.id === question_id){
           console.log('you are on the last question!')
+          console.log('topic finished!')
+          // add topic to user as finished 
+          $('.users-show').append(subtopic_id)
           // score += 20;
           badge += 1;
         }
@@ -62,12 +65,13 @@ $.fn.bels_awesome_func = function(e){
       };
     }
   })
- 
 };
 
 $(function() {
   $('.button').on('click', function() {
     $(this).bels_awesome_func();
+    $(current_score).hide();
+    $('#points').append(current_score += 10);
   });
   $('#points').append(current_score);
 });

@@ -28,6 +28,10 @@
 /*.navbar, a {
   color: white;
 }*/
+.subtopic-id {
+  height: 30px;
+  width: auto;
+}
 
 .instructions {
   float: left;
