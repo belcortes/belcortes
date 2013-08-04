@@ -2,12 +2,17 @@
 var blah = {}
 var questions = <%= @questions.to_json.html_safe %>;
 var last_question = questions[questions.length - 1];
+var score = 0
+
 $.fn.bels_awesome_func = function(e){
   // e.preventDefault();
+  
+  $('.instruction').append(score);
   var user_answer = $('input').val();
   // use ajax call to get correct answer - build showpage for answers in order to do so
   console.log(this)
   var question_id = this.parent().data('id')
+  console.log(last_question.id)
   console.log(question_id)
 
   var actual_answer = " "
@@ -34,6 +39,10 @@ $.fn.bels_awesome_func = function(e){
     };
     }
   })
+  if (last_question.id === question_id){
+    console.log('you are on the last question!')
+    sco
+  }
 };
 
 $(function() {
