@@ -13,6 +13,9 @@
       <% if !current_user %> 
         <a href="/sessions/new">Login</a>
       <% end %>
+      <% if current_user %> 
+        <%= current_user.name %>
+      <% end %>
       <a href="/subjects">Learn</a>
       <% if current_user %> 
         <%= link_to 'Progress', user_path(current_user) %>

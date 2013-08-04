@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130804203116) do
+ActiveRecord::Schema.define(version: 20130804204208) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,11 @@ ActiveRecord::Schema.define(version: 20130804203116) do
     t.boolean  "admin",           default: false
     t.integer  "score",           default: 0
     t.text     "badges",          default: "f"
+  end
+
+  create_table "users_topics", id: false, force: true do |t|
+    t.integer "user_id"
+    t.integer "topic_id"
   end
 
 end

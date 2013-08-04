@@ -23,6 +23,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    # p @user.topic
     @user = User.find(params[:id])
   end
 
@@ -44,7 +45,6 @@ class UsersController < ApplicationController
 
   def add_score
     @user = User.find(params[:id])
-    p @user
     score = @user.score + params[:score_increment].to_i
     if @user.update_attribute('score', score)
       render :json => @user
@@ -54,7 +54,7 @@ class UsersController < ApplicationController
   end
 
   def add_topic
-    
+    @user = User.find(params[:id])
   end
 
   private
