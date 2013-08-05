@@ -10,8 +10,6 @@ var score_params = {
   score_increment: 10,
   'subtopic_id': subtopic_id
 }
-var number_of_questions = 0
-// $('.questions-container').append("#progressbar")
 
 // ==============GLOBAL HELPER FUNCTIONS ============
 
@@ -22,7 +20,7 @@ function update_points_on_DOM(data){
 }
 
 var user_answer = function(){
-  return $('input').val();
+  return $('input').val()
 }
 
 function add_answer(data, button, question_id){
@@ -36,13 +34,7 @@ function add_answer(data, button, question_id){
     var question_index = $(button).parent().data('index');
     var num_questions = questions.length;
     update_progressbar(question_index/num_questions * 100);
-    // $(function() {
-
-    //   $("#progressbar").progressbar({
-    //     value: 37
-    //   });
-    // });
-    
+    return $('input').val(' ')
 
     $.ajax ({
       type: 'POST',
@@ -52,18 +44,20 @@ function add_answer(data, button, question_id){
         update_points_on_DOM(data);
       }
     });
-    // $('#points').append(add_score_to_user(data))
+
     if (last_question.id === question_id){
       console.log('you are on the last question!')
       console.log('topic finished!')
+
       $.ajax({
         type:'POST',
         url: "/add_subtopic",
         data: score_params,
         success: function(data){
           $('.subtopic-id').append(data)
-          // $('.subtopic').addClass('background')
-          window.location.href = "/subjects";
+          setTimeout(function () {
+            window.location.href = "/subjects";
+          }, 1000);
         }
       })
 
@@ -73,12 +67,17 @@ function add_answer(data, button, question_id){
   };
 }
 
+function update_progressbar(val){
+  $("#progressbar").progressbar({
+    value: val
+  });
+}
+
 // =============== JQUERY FUNCTIONS ============
 
 $.fn.bels_awesome_func = function(e){
   // e.preventDefault();
   
-  // var user_answer = $('input').val();
   var question_id = this.parent().data('id')
   var actual_answer = " "
   var answers_array = []
@@ -89,9 +88,6 @@ $.fn.bels_awesome_func = function(e){
   console.log(question_id)
   $.ajax({
     type: "GET",
-    // error: function(xhr, status, error){
-    //   console.log(xhr, status, error);
-    // },
     dataType: "JSON", 
     url: "/answers?question_id="+question_id,
     success: function(data){
@@ -100,11 +96,7 @@ $.fn.bels_awesome_func = function(e){
   })
 };
 // ================= DOCUMENT READY ===================
-function update_progressbar(val){
-  $("#progressbar").progressbar({
-    value: val
-  });
-}
+
 
 $(function() {
   $('.button').on('click', function() {

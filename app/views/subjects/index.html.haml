@@ -3,7 +3,7 @@
 
 
   - @subjects.each do |subject|
-    .topic
+    .subject
       = link_to subject.name, topics_path+"?subject_id=#{subject.id}"
       - if current_user && current_user.admin?
         = link_to('edit', edit_subject_path(subject))

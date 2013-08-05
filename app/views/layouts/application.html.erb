@@ -18,20 +18,18 @@
         <a href="/sessions/new">Login</a>
          <a href="/users/new">Sign-Up</a>
       <% end %>
-      <% if current_user %> 
-        <%= current_user.name %>
-      <% end %>
       <a href="/subjects">Learn</a>
       <% if current_user %> 
         <%= link_to 'Progress', user_path(current_user) %>
         <%= link_to 'Logout', logout_path, method: :delete%>
+        <%= current_user.name %>
       <% end %>
     </div>
   </div>
-  
-<div id='main-container'>
-  <%= yield %>
-</div>
+  <br>
+  <div id='main-container'>
+    <%= yield %>
+  </div>
 
 
 </body>

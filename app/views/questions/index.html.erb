@@ -3,29 +3,21 @@
 <h1> Questions</h1>
 
 <div class='row questions-container'>
-  <div class='instructions five columns'>
+  <div class='row instructions five columns'>
       <div id='points'></div>
-    Content
     <% @questions.order(:id).each_with_index do |question, index| %>
       <div data-id='<%= question.id %>' data-index='<%= index + 1 %>' class='question <%= "#{'hidden' if index != 0}" %>'>
         <%= question.content %>
         </br>
+        <input class='input seven columns'/>
         <button class='button'>
           Submit
         </button>
       </div>
     <% end %>
+    
   </div>
-  <input class='input seven columns'/>
-</div>
   
-<script>
-  // $(function() {
-  //   $("#progressbar").progressbar({
-  //     value: 40
-  //   });
-  // });
-</script>
-
+</div>
  
 <div id="progressbar"></div>

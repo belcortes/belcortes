@@ -13,11 +13,3 @@
   - if current_user && current_user.admin?
     = link_to('edit', edit_subtopic_path(subtopic))
     = link_to('delete', subtopic_path(subtopic), method: :delete, confirm: 'Are you sure you want to delete this subtopic?')
-
-  / <% @quizzes.each do |quiz| %>
-  / <div class='quiz'>
-  /   <%= link_to quiz.name, quiz %>
-  /   <div class='questions'>
-  /     <% quiz.questions.each do |question| %>
-  /       <div class='questions'>
-  /         <%= question.content %>
