@@ -16,15 +16,23 @@
   line-height: 50px;
   margin-right: 20px;
 }
+.background{
+  background-color: red;
+}
+.topic {
+  width: 90%;
+  height: 60px;
+  border: 1px dashed gray;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 60px;
+}
 
 #main-container {
   width: 95%;
   margin: 0 auto;
   height: auto;
 }
-/*a {
-  color: white;
-}*/
 .navbar a {
   color: white;
   text-decoration: none;
@@ -39,9 +47,6 @@
   line-height: 60px;
 }
 
-/*.navbar, a:visited {
-  color: white;
-}*/
 .subtopic-id {
   height: 30px;
   width: auto;

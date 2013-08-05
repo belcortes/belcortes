@@ -1,10 +1,8 @@
 <script >
 <% if current_user %>
-var blah = {}
 var questions = <%= @questions.to_json.html_safe %>;
 var last_question = questions[questions.length - 1];
 var current_score = <%= current_user.score %>
-// var badge = 0
 var subtopic_id = questions[0].subtopic_id
 var subtopic = <%= @questions[0].subtopic.to_json.html_safe %>
 var score_params = {
@@ -55,7 +53,8 @@ function add_answer(data, button, question_id){
         data: score_params,
         success: function(data){
           $('.subtopic-id').append(data)
-          $('.subtopic').css('background-color', 'red')
+          $('#subtopic').addClass('background')
+          window.location.href = "/subjects";
         }
       })
 
@@ -65,7 +64,7 @@ function add_answer(data, button, question_id){
   };
 }
 
-// =============== JQUERY/AJAX FUNCTIONS ============
+// =============== JQUERY FUNCTIONS ============
 
 $.fn.bels_awesome_func = function(e){
   // e.preventDefault();
