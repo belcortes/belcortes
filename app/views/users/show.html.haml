@@ -1,3 +1,5 @@
+/ = render partial: '/questions/partials/js_helpers'
+
 - if current_user
   %h2
     = @user.name
@@ -9,5 +11,9 @@
     %br
     Finished Topics:
     .subtopic-id
+      - @user.subtopics.each do |t|
+        / - unless t.name
+        = t.name
+
 
 

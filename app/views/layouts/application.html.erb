@@ -12,6 +12,7 @@
     <div id='navigation'>
       <% if !current_user %> 
         <a href="/sessions/new">Login</a>
+         <a href="/users/new">Sign-Up</a>
       <% end %>
       <% if current_user %> 
         <%= current_user.name %>

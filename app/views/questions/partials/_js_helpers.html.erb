@@ -4,15 +4,65 @@ var blah = {}
 var questions = <%= @questions.to_json.html_safe %>;
 var last_question = questions[questions.length - 1];
 var current_score = <%= current_user.score %>
-var badge = 0
+// var badge = 0
 var subtopic_id = questions[0].subtopic_id
-console.log(subtopic_id)
+var subtopic = <%= @questions[0].subtopic.to_json.html_safe %>
+var score_params = {
+  id: <%= current_user.id %>,
+  score_increment: 10,
+  'subtopic_id': subtopic_id
+}
 
 
 // ==============GLOBAL HELPER FUNCTIONS ============
 
-function add_score() {
-  current_score += 10
+function update_points_on_DOM(data){
+  current_score = data.score;
+  $('#points').text(current_score);
+  return current_score;
+}
+
+var user_answer = function(){
+  return $('input').val();
+}
+
+function add_answer(data, button, question_id){
+  // may get more than 1 answer back
+  answers_array = data
+  actual_answer = data[0].content
+  //REFACTOR!!!!!!!!!!! 
+  if (user_answer() === actual_answer.toString()){
+    $(button).parent().next('.question').show();
+    $(button).parent().hide();
+    
+    
+
+    $.ajax ({
+      type: 'POST',
+      url: "/add_score",
+      data: score_params,
+      success: function(data){
+        update_points_on_DOM(data);
+      }
+    });
+    // $('#points').append(add_score_to_user(data))
+    if (last_question.id === question_id){
+      console.log('you are on the last question!')
+      console.log('topic finished!')
+      $.ajax({
+        type:'POST',
+        url: "/add_subtopic",
+        data: score_params,
+        success: function(data){
+          $('.subtopic-id').append(data)
+          $('.subtopic').css('background-color', 'red')
+        }
+      })
+
+    }
+  } else {
+    alert('Sorry, the answer is incorrect please try again')
+  };
 }
 
 // =============== JQUERY/AJAX FUNCTIONS ============
@@ -20,11 +70,14 @@ function add_score() {
 $.fn.bels_awesome_func = function(e){
   // e.preventDefault();
   
-  var user_answer = $('input').val();
+  // var user_answer = $('input').val();
   var question_id = this.parent().data('id')
   var actual_answer = " "
   var answers_array = []
   var button = this;
+  
+  
+
   console.log(question_id)
   $.ajax({
     type: "GET",
@@ -34,46 +87,15 @@ $.fn.bels_awesome_func = function(e){
     dataType: "JSON", 
     url: "/answers?question_id="+question_id,
     success: function(data){
-      // may get more than 1 answer back
-      answers_array = data
-      actual_answer = data[0].content
-      //REFACTOR!!!!!!!!!!! 
-      if (user_answer === actual_answer.toString()){
-        $(button).parent().next('.question').show();
-        $(button).parent().hide();
-        var score_params = {
-          id: <%= current_user.id %>,
-          score_increment: 10
-        }
-        console.log(score_params)
-        $.ajax ({
-          type: 'POST',
-          url: "/add_score",
-          data: score_params,
-          success: function(data){
-            current_score = data.score
-          }
-        });
-        if (last_question.id === question_id){
-          console.log('you are on the last question!')
-          console.log('topic finished!')
-          // add topic to user as finished 
-          $('.users-show').append(subtopic_id)
-          // score += 20;
-          badge += 1;
-        }
-      } else {
-        alert('Sorry, the answer is incorrect please try again')
-      };
+      add_answer(data, button, question_id);
     }
   })
 };
+// ================= DOCUMENT READY ===================
 
 $(function() {
   $('.button').on('click', function() {
     $(this).bels_awesome_func();
-    $(current_score).hide();
-    $('#points').append(current_score += 10);
   });
   $('#points').append(current_score);
 });

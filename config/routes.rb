@@ -5,6 +5,8 @@ Calcacademy::Application.routes.draw do
 
   resources :users
   post '/add_score' => 'users#add_score'
+  post '/add_topic' => 'users#add_topic'
+  post '/add_subtopic' => 'users#add_subtopic'
   resources :subjects
   resources :topics
   resources :subtopics

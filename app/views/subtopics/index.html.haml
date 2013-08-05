@@ -1,7 +1,7 @@
 %h1 Subtopics
 
 - @subtopics.each do |subtopic|
-  .topic
+  .subtopic
     = link_to subtopic.name, questions_path+"?subtopic_name=#{subtopic.name}"
   - if current_user && current_user.admin?
     = link_to('edit', edit_subtopic_path(subtopic))

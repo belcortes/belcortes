@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130804204208) do
+ActiveRecord::Schema.define(version: 20130805142907) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,11 @@ ActiveRecord::Schema.define(version: 20130804204208) do
     t.datetime "updated_at"
   end
 
+  create_table "subtopics_users", id: false, force: true do |t|
+    t.integer "user_id"
+    t.integer "subtopic_id"
+  end
+
   create_table "topics", force: true do |t|
     t.string   "name"
     t.integer  "subject_id"
@@ -76,11 +81,6 @@ ActiveRecord::Schema.define(version: 20130804204208) do
     t.boolean  "admin",           default: false
     t.integer  "score",           default: 0
     t.text     "badges",          default: "f"
-  end
-
-  create_table "users_topics", id: false, force: true do |t|
-    t.integer "user_id"
-    t.integer "topic_id"
   end
 
 end

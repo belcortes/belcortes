@@ -23,7 +23,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    # p @user.topic
     @user = User.find(params[:id])
   end
 
@@ -47,19 +46,27 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     score = @user.score + params[:score_increment].to_i
     if @user.update_attribute('score', score)
+      puts @user
+      puts "User Hash is above"
       render :json => @user
     else
       render :text => 'failed!'
     end
   end
 
-  def add_topic
+  def add_subtopic
     @user = User.find(params[:id])
+    @subtopic = Subtopic.find(params[:subtopic_id])
+    if @user.subtopics.push(@subtopic)
+      render :json => @user
+    else
+      render text: 'not saved'
+    end
   end
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :admin, :score)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :admin, :score, :subtopics)
     
   end
 end

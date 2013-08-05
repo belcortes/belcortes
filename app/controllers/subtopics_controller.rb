@@ -38,6 +38,6 @@ class SubtopicsController < ApplicationController
 
     private
   def subtopic_params
-    params.require(:subtopic).permit(:name, :topic_id)
+    params.require(:subtopic).permit(:name, :topic_id, :users)
   end
 end

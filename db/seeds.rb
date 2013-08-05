@@ -2,6 +2,8 @@ User.delete_all
 Subject.delete_all
 Topic.delete_all
 Subtopic.delete_all
+Question.delete_all
+Answer.delete_all
 
 user1 = User.create(name: 'Zhao', email: 'zhao@gmail.com', password: 'pass123', password_confirmation: 'pass123')
 user2 = User.create(name: 'Omar', email: 'omar@gmail.com', password: 'pass123', password_confirmation: 'pass123')
