@@ -7,7 +7,7 @@
       <div id='points'></div>
     Content
     <% @questions.order(:id).each_with_index do |question, index| %>
-      <div data-id='<%= question.id %>' class='question <%= "#{'hidden' if index != 0}" %>'>
+      <div data-id='<%= question.id %>' data-index='<%= index + 1 %>' class='question <%= "#{'hidden' if index != 0}" %>'>
         <%= question.content %>
         </br>
         <button class='button'>

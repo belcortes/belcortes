@@ -3,7 +3,8 @@
 - @subtopics.each do |subtopic|
   .subtopic{class: "#{'finished' if current_user.subtopics.include? subtopic}"}
     = link_to subtopic.name, questions_path+"?subtopic_name=#{subtopic.name}"
-    = subtopic.questions
+    Questions:
+    = subtopic.questions.length
     / - subtopic.questions.each do |question|
     /   = question.content
   %br

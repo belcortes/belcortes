@@ -10,6 +10,7 @@ var score_params = {
   score_increment: 10,
   'subtopic_id': subtopic_id
 }
+var number_of_questions = 0
 // $('.questions-container').append("#progressbar")
 
 // ==============GLOBAL HELPER FUNCTIONS ============
@@ -32,6 +33,9 @@ function add_answer(data, button, question_id){
   if (user_answer() === actual_answer.toString()){
     $(button).parent().next('.question').show();
     $(button).parent().hide();
+    var question_index = $(button).parent().data('index');
+    var num_questions = questions.length;
+    update_progressbar(question_index/num_questions * 100);
     // $(function() {
 
     //   $("#progressbar").progressbar({
