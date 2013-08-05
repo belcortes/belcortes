@@ -57,8 +57,12 @@ class UsersController < ApplicationController
   def add_subtopic
     @user = User.find(params[:id])
     @subtopic = Subtopic.find(params[:subtopic_id])
-    if @user.subtopics.push(@subtopic)
-      render :json => @user
+    unless @user.subtopics.include? @subtopic
+      if @user.subtopics.push(@subtopic)
+        render :json => @user
+      else
+        render text: 'not saved'
+      end
     else
       render text: 'not saved'
     end

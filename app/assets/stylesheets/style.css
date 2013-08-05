@@ -16,10 +16,7 @@
   line-height: 50px;
   margin-right: 20px;
 }
-.background{
-  background-color: red;
-}
-.topic {
+.topic, .subtopic {
   width: 90%;
   height: 60px;
   border: 1px dashed gray;
@@ -77,4 +74,14 @@
 
 .hidden {
   display: none;
+}
+
+.finished {
+  background-color: #9cbc62;
+}
+.finished:hover {
+  background-color: green;
+}
+#progressbar {
+  margin-bottom: 30px;
 }

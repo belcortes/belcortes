@@ -53,7 +53,7 @@ function add_answer(data, button, question_id){
         data: score_params,
         success: function(data){
           $('.subtopic-id').append(data)
-          $('#subtopic').addClass('background')
+          // $('.subtopic').addClass('background')
           window.location.href = "/subjects";
         }
       })
