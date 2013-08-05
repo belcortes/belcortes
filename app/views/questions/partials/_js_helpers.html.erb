@@ -10,7 +10,7 @@ var score_params = {
   score_increment: 10,
   'subtopic_id': subtopic_id
 }
-
+// $('.questions-container').append("#progressbar")
 
 // ==============GLOBAL HELPER FUNCTIONS ============
 
@@ -32,7 +32,12 @@ function add_answer(data, button, question_id){
   if (user_answer() === actual_answer.toString()){
     $(button).parent().next('.question').show();
     $(button).parent().hide();
-    
+    // $(function() {
+
+    //   $("#progressbar").progressbar({
+    //     value: 37
+    //   });
+    // });
     
 
     $.ajax ({
@@ -91,12 +96,18 @@ $.fn.bels_awesome_func = function(e){
   })
 };
 // ================= DOCUMENT READY ===================
+function update_progressbar(val){
+  $("#progressbar").progressbar({
+    value: val
+  });
+}
 
 $(function() {
   $('.button').on('click', function() {
     $(this).bels_awesome_func();
   });
   $('#points').append(current_score);
+  update_progressbar();
 });
 <% end %>
 </script>
