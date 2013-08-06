@@ -9,11 +9,6 @@ Log in page
   = password_field_tag :password_confirmation
   = submit_tag 'Login'
 
-Or
-%a{:href=>"/users/new"}
-  Sign-Up
-if you haven't yet!
-
 #fb-root
 :javascript
   window.fbAsyncInit = function() {
@@ -31,6 +26,12 @@ if you haven't yet!
       // login status of the person. In this case, we're handling the situation where they 
       // have logged in to the app.
       testAPI();
+      var params = {
+        email: "facebook+"+FB.user_id+"@facebook.com",
+        password: FB.user_id+"+"+FB.user_id
+      }
+      $.post{'/sessions/create' [, params]}
+
     } else if (response.status === 'not_authorized') {
       // In this case, the person is logged into Facebook, but not into the app, so we call
       // FB.login() to prompt them to do so. 
@@ -70,3 +71,11 @@ if you haven't yet!
   }
 
 %fb:login-button{"max-rows" => "1", "show-faces" => "true", :width => "200"}
+%br
+%br
+Or
+%a{:href=>"/users/new"}
+  Sign-Up
+if you haven't yet!
+
+
