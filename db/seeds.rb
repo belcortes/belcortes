@@ -26,7 +26,7 @@ question1 = Question.create(content: 'What is 1+1?')
 question2 = Question.create(content: 'What is 2 * 3?')  
 
 answer1 = Answer.create(content: 2, is_correct: true)
-answer2 = Answer.create(content: 6, is_correct: false)
+answer2 = Answer.create(content: 6, is_correct: true)
 
 
 subject1.topics << topic1 << topic2 << topic3
@@ -36,9 +36,3 @@ topic4.subtopics << subtopic3
 subtopic1.questions << question1 << question2
 question1.answers << answer1
 question2.answers << answer2
-
-
-
-# question1 = Question.create(content: '')
-
-# puts user4.errors.full_messages

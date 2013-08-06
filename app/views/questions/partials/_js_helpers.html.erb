@@ -19,22 +19,27 @@ function update_points_on_DOM(data){
   return current_score;
 }
 
-var user_answer = function(){
-  return $('input').val()
-}
+// function get_user_answer(){
+//   return $('input').val()
+// }
 
 function add_answer(data, button, question_id){
+
   // may get more than 1 answer back
   answers_array = data
-  actual_answer = data[0].content
+  var actual_answer = data[0].content
+  var user_input = $('input').val()
+  console.log(data)
   //REFACTOR!!!!!!!!!!! 
-  if (user_answer() === actual_answer.toString()){
+  console.log(actual_answer)
+  console.log(user_input)
+  if (user_input === actual_answer.toString()){
     $(button).parent().next('.question').show();
     $(button).parent().hide();
     var question_index = $(button).parent().data('index');
     var num_questions = questions.length;
     update_progressbar(question_index/num_questions * 100);
-    return $('input').val(' ')
+    
 
     $.ajax ({
       type: 'POST',
@@ -65,6 +70,7 @@ function add_answer(data, button, question_id){
   } else {
     alert('Sorry, the answer is incorrect please try again')
   };
+  $('input').val('')
 }
 
 function update_progressbar(val){
@@ -79,13 +85,12 @@ $.fn.bels_awesome_func = function(e){
   // e.preventDefault();
   
   var question_id = this.parent().data('id')
-  var actual_answer = " "
+  // var actual_answer = " "
+  // console.log('actual answer was just reset to' + actual_answer)
   var answers_array = []
   var button = this;
-  
-  
+  // var user_input = get_user_answer()
 
-  console.log(question_id)
   $.ajax({
     type: "GET",
     dataType: "JSON", 
@@ -94,6 +99,7 @@ $.fn.bels_awesome_func = function(e){
       add_answer(data, button, question_id);
     }
   })
+  // $('input').val('')
 };
 // ================= DOCUMENT READY ===================
 
