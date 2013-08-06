@@ -5,8 +5,8 @@ Log in page
   = text_field_tag :email
   = label_tag :password
   = password_field_tag :password
-  = label_tag :password_confirmation
-  = password_field_tag :password_confirmation
+  / = label_tag :password_confirmation
+  / = password_field_tag :password_confirmation
   = submit_tag 'Login'
 
 #fb-root
@@ -14,7 +14,7 @@ Log in page
   window.fbAsyncInit = function() {
   FB.init({
     appId      : '605311116169644', // App ID
-    channelUrl : 'http://calcacademy.herokuapp.com', // Channel File
+    channelUrl : 'http://localhost:3000', // Channel File
     status     : true, // check login status
     cookie     : true, // enable cookies to allow the server to access the session
     xfbml      : true  // parse XFBML
@@ -34,6 +34,23 @@ Log in page
       // login status of the person. In this case, we're handling the situation where they 
       // have logged in to the app.
       testAPI();
+      var user_id = FB.getUserID()
+      var params = {
+        email: "facebook+"+user_id+"@facebook.com",
+        password: user_id+"+"+user_id,
+        password_confirmation: user_id+"+"+user_id,
+        facebook_id: user_id,
+        facebook_login: true
+      }
+
+      $.ajax({
+        method: "POST",
+        data: params,
+        url: '#{sessions_path}',
+        success: function(){
+          console.log("session created!")
+        }
+      })
 
     } else if (response.status === 'not_authorized') {
       // In this case, the person is logged into Facebook, but not into the app, so we call

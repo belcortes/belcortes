@@ -1,11 +1,23 @@
 class SessionsController < ApplicationController
   def new
   end
- def create
-    if FB.user_id == true && !@user#they logged in with facebook && they dont have an account with calcacademy
-      @user = User.new
+  def create
+    # binding.pry
+    p params
+    if params[:facebook_login] #they logged in with facebook && they dont have an account with calcacademy
+      user = User.find_by_email(params[:email])
+      if user.nil?
+        user = User.create(
+          name: params[:facebook_id],
+          email: "facebook+"+params[:facebook_id]+"@facebook.com",
+          password: params[:facebook_id]+"+"+params[:facebook_id],
+          password_confirmation: params[:facebook_id]+"+"+params[:facebook_id]
+        )
+      end
+      p user
+    else
+      user = User.find_by_email(params[:email])
     end
-    user = User.find_by_email(params[:email])
     authenticated_user = user.authenticate(params[:password]) if user
     p 'almost authenticated'
     if authenticated_user

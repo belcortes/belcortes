@@ -48,6 +48,9 @@
   height: 30px;
   width: auto;
 }
+.subtopic-badge, img{
+  height: 150px;
+}
 
 .instructions {
   margin: 0 auto;
@@ -55,6 +58,10 @@
   border: 1px solid black;
   height: auto;
   /*width: 35%;*/
+}
+.badge{
+  width: 100px;
+/*  height: 100px;*/
 }
 
 #points {

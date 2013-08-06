@@ -5,11 +5,16 @@ var last_question = questions[questions.length - 1];
 var current_score = <%= current_user.score %>
 var subtopic_id = questions[0].subtopic_id
 var subtopic = <%= @questions[0].subtopic.to_json.html_safe %>
+var subtopic_badge = subtopic.badge
+// var badge = $("<img src='"+subtopic_badge+"'/>")
 var score_params = {
   id: <%= current_user.id %>,
   score_increment: 10,
-  'subtopic_id': subtopic_id
+  'subtopic_id': subtopic_id,
+  'subtopic_badge': subtopic_badge
 }
+
+
 
 // ==============GLOBAL HELPER FUNCTIONS ============
 
@@ -18,10 +23,6 @@ function update_points_on_DOM(data){
   $('#points').text(current_score);
   return current_score;
 }
-
-// function get_user_answer(){
-//   return $('input').val()
-// }
 
 function add_answer(data, button, question_id){
 
@@ -63,6 +64,9 @@ function add_answer(data, button, question_id){
           setTimeout(function () {
             window.location.href = "/subjects";
           }, 1000);
+          var badge = $('<img class="badge">'); 
+          badge.attr('src', data.html_safe());
+          $('.subtopic-badge').append(badge);
         }
       })
 

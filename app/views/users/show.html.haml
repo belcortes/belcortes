@@ -8,11 +8,13 @@
     = @user.score
     %br
     Badges:
+    .subtopic-badge
+      - @user.subtopics.each do |t|
+        = image_tag(t.badge)
     %br
     Finished Topics:
     .subtopic-id
       - @user.subtopics.each do |t|
-        / - unless t.name
         = t.name
 
 

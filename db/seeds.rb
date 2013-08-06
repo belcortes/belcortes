@@ -18,9 +18,9 @@ topic2 = Topic.create(name: 'Functions')
 topic3 = Topic.create(name: 'Trigonometry')
 topic4 = Topic.create(name: 'Intro to Calculus')
 
-subtopic1 = Subtopic.create(name: 'Algebra')
-subtopic2 = Subtopic.create(name: 'Exponents')
-subtopic3 = Subtopic.create(name: 'Derivatives')
+subtopic1 = Subtopic.create(name: 'Algebra', badge: 'http://i.ebayimg.com/t/Pi-25mm-badge-maths-geek-nerd-3-14-button-calculus-/06/!BzsNkw!CWk~$(KGrHqF,!jkEw4-0k,4hBM(IT1!79g~~_35.JPG')
+subtopic2 = Subtopic.create(name: 'Exponents', badge: 'http://i.ebayimg.com/t/Pi-25mm-badge-maths-geek-nerd-3-14-button-calculus-/06/!BzsNkw!CWk~$(KGrHqF,!jkEw4-0k,4hBM(IT1!79g~~_35.JPG')
+subtopic3 = Subtopic.create(name: 'Derivatives', badge: 'http://i.ebayimg.com/t/Pi-25mm-badge-maths-geek-nerd-3-14-button-calculus-/06/!BzsNkw!CWk~$(KGrHqF,!jkEw4-0k,4hBM(IT1!79g~~_35.JPG')
 
 question1 = Question.create(content: 'What is 1+1?')
 question2 = Question.create(content: 'What is 2 * 3?')  
