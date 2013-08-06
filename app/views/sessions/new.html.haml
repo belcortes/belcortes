@@ -26,11 +26,6 @@ Log in page
       // login status of the person. In this case, we're handling the situation where they 
       // have logged in to the app.
       testAPI();
-      var params = {
-        email: "facebook+"+FB.user_id+"@facebook.com",
-        password: FB.user_id+"+"+FB.user_id
-      }
-      $.post{'/sessions/create' [, params]}
 
     } else if (response.status === 'not_authorized') {
       // In this case, the person is logged into Facebook, but not into the app, so we call
