@@ -15,18 +15,23 @@
     <div id='logo'><a href="/">Calcacademy</a></div>
     <div id='navigation'>
       <% if !current_user %> 
-        <a href="/sessions/new">Login</a>
-         <a href="/users/new">Sign-Up</a>
+        <%= link_to 'Login', new_user_session_path, method: :get %>
+        <a href="/users/sign_up">Sign-Up</a>
       <% end %>
       <a href="/subjects">Learn</a>
       <% if current_user %> 
         <%= link_to 'Progress', user_path(current_user) %>
-        <%= link_to 'Logout', logout_path, method: :delete%>
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
         <%= current_user.name %>
       <% end %>
     </div>
   </div>
   <br>
+
+        <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
+
   <div id='main-container'>
     <%= yield %>
   </div>

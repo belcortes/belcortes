@@ -5,16 +5,16 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
-  def current_user
-    if session[:user_id]
-      User.find(session[:user_id])
-    end
-  end
+  # def current_user
+  #   if session[:user_id]
+  #     User.find(session[:user_id])
+  #   end
+  # end
 
-  private
-    def ensure_admin
-      unless current_user && current_user.admin?
-        render text: 'not authorized'
-    end
-  end
+  # private
+  #   def ensure_admin
+  #     unless current_user && current_user.admin?
+  #       render text: 'not authorized'
+  #   end
+  # end
 end
