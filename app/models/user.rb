@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 
   def self.find_for_twitter_oauth(auth)
 
-    if (defined? current_user)
+    if user_signed_in?
       user = current_user
       identity = user.identities.where(provider: auth.provider).first
       if identity

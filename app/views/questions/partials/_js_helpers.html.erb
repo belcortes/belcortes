@@ -24,6 +24,22 @@ function update_points_on_DOM(data){
   return current_score;
 }
 
+function scan_for_images(element){
+  element = $(element)
+  var patt=/(@@IMAGE=).+(@@IMAGE-END)/g;
+  var question_string = element.html();
+  var matches = question_string.match(patt);
+  console.log(matches)
+  for (i = 0; i < matches.length; i++){
+    var total_length = matches[i].length
+    var new_image = matches[i].slice(8,total_length-11)
+  };
+  console.log(question_string)
+  question_string_new = question_string.replace(patt,"<img src='/images/"+new_image+"'/>")
+  console.log(question_string)
+  element.html(question_string_new)
+}
+
 function add_answer(data, button, question_id){
 
   // may get more than 1 answer back
@@ -37,6 +53,7 @@ function add_answer(data, button, question_id){
   if (user_input === actual_answer.toString()){
     $(button).parent().next('.question').show();
     $(button).parent().hide();
+    //scan_for_images();
     var question_index = $(button).parent().data('index');
     var num_questions = questions.length;
     update_progressbar(question_index/num_questions * 100);
@@ -114,6 +131,7 @@ $(function() {
   });
   $('#points').append(current_score);
   update_progressbar();
+  // scan_for_images();
 });
 <% end %>
 </script>

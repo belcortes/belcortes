@@ -15,14 +15,17 @@
     <div id='logo'><a href="/">calcacademy</a></div>
     <div id='navigation'>
       <% if !current_user %> 
-        <%= link_to 'Login', new_user_session_path, method: :get %>
-        <a href="/users/sign_up">sign-Up</a>
+        <%= link_to 'login', new_user_session_path, method: :get %>
+        <a href="/users/sign_up">sign-up</a>
       <% end %>
       <div id='main-links'>
-        <a href="/subjects">learn</a>
+        <a href="/subjects" id='learn'>learn</a>
         <% if current_user %> 
-          <%= link_to 'progress', user_path(current_user) %>
+          <%= link_to 'progress', user_path(current_user), :id => 'user-progress' %>
           <%= link_to 'logout', destroy_user_session_path, method: :delete%>
+        <% end %>
+          <a href="mailto:belcortes@gmail.com" id='contact'>contact</a>
+        <% if current_user %> 
           <span id='user-email'>
             <%= current_user.email %>
           </span>

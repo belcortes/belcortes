@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+  font-family: helvetica;
+}
 .navbar {
   height: 50px;
   width: 100%;
@@ -26,6 +30,12 @@
 #main-links{
   padding-right: 10px;
 }
+#learn, #user-progress {
+  padding-right: 10px;
+}
+#contact {
+  padding-left: 10px;
+}
 .topic, .subtopic, .subject {
   width: 90%;
   height: 60px;
@@ -34,6 +44,7 @@
   text-align: center;
   line-height: 60px;
 }
+
 #user-email {
   color: white;
   margin-left: 40px;
@@ -43,6 +54,7 @@
   width: 95%;
   margin: 0 auto;
   height: auto;
+  font-family: helvetica;
 }
 .navbar a {
   color: white;

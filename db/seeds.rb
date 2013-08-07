@@ -29,7 +29,11 @@ subtopic1 = Subtopic.create(name: 'Algebra', badge: 'algebra.jpg')
 subtopic2 = Subtopic.create(name: 'Exponents', badge: 'http://i.ebayimg.com/t/Pi-25mm-badge-maths-geek-nerd-3-14-button-calculus-/06/!BzsNkw!CWk~$(KGrHqF,!jkEw4-0k,4hBM(IT1!79g~~_35.JPG')
 subtopic3 = Subtopic.create(name: 'Derivatives', badge: 'http://i.ebayimg.com/t/Pi-25mm-badge-maths-geek-nerd-3-14-button-calculus-/06/!BzsNkw!CWk~$(KGrHqF,!jkEw4-0k,4hBM(IT1!79g~~_35.JPG')
 
-question1 = Question.create(content: 'What is 1+1?')
+question1 = Question.create(content: "A linear equation is an equation for a straight line.
+The basic format for a linear equation is:
+y = mx + b
+where m is the slope and b is the y-intercept
+Slope = One of the most important properties of a straight line is in how it angles away from the horizontal. This concept is reflected in something called the 'slope' of the line. The formula for the slope of a line is @@IMAGE=slope_formula.jpg@@IMAGE-END")
 question2 = Question.create(content: 'What is 2 * 3?')  
 
 answer1 = Answer.create(content: 2, is_correct: true)
