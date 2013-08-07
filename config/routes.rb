@@ -6,10 +6,15 @@ Calcacademy::Application.routes.draw do
   scope :my_scope do
     resources :users
   end
+  # post '/users/omniauth_authorize' => 'users#omniauth_authorize'
   post '/add_score' => 'users#add_score'
   post '/add_topic' => 'users#add_topic'
   post '/add_subtopic' => 'users#add_subtopic'
-  resources :subjects
+  resources :subjects do
+    member do
+      post 'index'
+    end
+  end
   resources :topics
   resources :subtopics
   resources :questions
