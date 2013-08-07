@@ -1,10 +1,11 @@
 Calcacademy::Application.routes.draw do
-
-
-  devise_for :users
   root 'home#index'
 
-  resources :users
+  devise_for :users, :controllers => {:omniauth_callbacks => "users/omniauth_callbacks"}
+
+  scope :my_scope do
+    resources :users
+  end
   post '/add_score' => 'users#add_score'
   post '/add_topic' => 'users#add_topic'
   post '/add_subtopic' => 'users#add_subtopic'
