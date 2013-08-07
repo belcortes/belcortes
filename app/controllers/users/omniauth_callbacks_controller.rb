@@ -13,10 +13,19 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     else
       flash[:error] = 'Unable to connect to Twitter'
     end
+
+    # @user = User.new(params[:user])
+    # if @user.save
+    #   redirect_to root_path
+    # else
+    #   # This line overrides the default rendering behavior, which
+    #   # would have been to render the "create" view.
+    #   render :action => "new"
+    # end
     # current_user = @user
 
-    redirect_to subjects_path
-    # render :action
+    redirect_to root_path
+
   end
 
   private

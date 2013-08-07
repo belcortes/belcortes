@@ -12,9 +12,6 @@ class ApplicationController < ActionController::Base
     root_path
   end
 
-  def current_user=(user)
-    current_user = user
-  end 
 
   # def current_user
   #   if session[:user_id]
