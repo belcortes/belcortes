@@ -1,6 +1,7 @@
-a {
+a, a:hover, a:visited {
   text-decoration: none;
   font-family: helvetica;
+  color: white;
 }
 .navbar {
   height: 50px;
@@ -40,17 +41,24 @@ a {
 .topic, .subtopic, .subject {
   width: 90%;
   height: 60px;
-  background-color: #C2E4EB;
+  background-color: #f2b8b2;
   margin: 0 auto;
   text-align: center;
   line-height: 60px;
   font-family: "helvetica neue";
-  font-size: 20px
+  font-size: 20px;
+  color: white;
+}
+.topic:hover, .subtopic:hover, .subject:hover {
+  background-color: #e94c43;
 }
 
 #user-email {
   color: white;
   margin-left: 40px;
+}
+h3 {
+  font-family: "helvetica neue"
 }
 body {
   background-image: url('/images/pw_maze_white.png')
@@ -62,20 +70,6 @@ body {
   font-family: helvetica;
   
 }
-.navbar a {
-  color: white;
-  text-decoration: none;
-}
-
-/*.subject{
-  width: 90%;
-  height: 60px;
-  border: 1px dashed gray;
-  margin: 0 auto;
-  text-align: center;
-  line-height: 60px;
-}*/
-
 .subtopic-id {
   height: 30px;
   width: auto;
@@ -83,10 +77,8 @@ body {
 .subtopic-badge, img{
   height: 150px;
 }
-
 .instructions {
   margin: 0 auto;
-  /*float: left;*/
   border: 1px solid black;
   height: auto;
   /*width: 35%;*/
@@ -95,7 +87,6 @@ body {
   width: 100px;
 /*  height: 100px;*/
 }
-
 #user-progress {
   margin: 0 auto;
   width: 900px;
@@ -120,18 +111,21 @@ body {
   margin-bottom: 20px;
   margin-top: 30px;
 }
-
 .hidden {
   display: none;
 }
-
 .finished {
   background-color: #9cbc62;
 }
 .finished:hover {
-  background-color: green;
+  background-color: #4a8134;
 }
 #progressbar {
   margin-bottom: 30px;
-  background-color: #4BB1C3;
+  background: #C2E4EB;
+  border: none;
+}
+.ui-progressbar .ui-progressbar-value {
+  background: #4BB1C3 url(images/ui-bg_highlight-soft_75_cccccc_1x100.png) 50% 50% repeat-x;
+  border-right: none;
 }

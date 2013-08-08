@@ -25,8 +25,8 @@ topic2 = Topic.create(name: 'FUNCTIONS')
 topic3 = Topic.create(name: 'TRIGONOMETRY')
 topic4 = Topic.create(name: 'INTRO TO CALCULUS')
 
-subtopic1 = Subtopic.create(name: 'ALGEBRA', badge: 'algebra.jpg')
-subtopic2 = Subtopic.create(name: 'EXPONENTS', badge: 'http://i.ebayimg.com/t/Pi-25mm-badge-maths-geek-nerd-3-14-button-calculus-/06/!BzsNkw!CWk~$(KGrHqF,!jkEw4-0k,4hBM(IT1!79g~~_35.JPG')
+subtopic1 = Subtopic.create(name: 'ALGEBRA', badge: 'algebra.png')
+subtopic2 = Subtopic.create(name: 'EXPONENTS', badge: 'exponents.png')
 subtopic3 = Subtopic.create(name: 'DERIVATIVES', badge: 'http://i.ebayimg.com/t/Pi-25mm-badge-maths-geek-nerd-3-14-button-calculus-/06/!BzsNkw!CWk~$(KGrHqF,!jkEw4-0k,4hBM(IT1!79g~~_35.JPG')
 
 question1 = Question.create(question_number: 1, content: "A linear equation is an equation for a straight line.
@@ -102,10 +102,13 @@ q - which of the following expressions is a polynomial, and what is it’s degre
 
 ")
 
+question5 = Question.create(question_number: 1, content:"What is 2^3?")
+
 answer1 = Answer.create(content: 'c', is_correct: true)
 answer2 = Answer.create(content: 2, is_correct: true)
 answer3 = Answer.create(content: '(0,3)', is_correct: true)
 answer4 = Answer.create(content: 'd', is_correct: true)
+answer5 = Answer.create(content: 8, is_correct: true)
 
 
 subject1.topics << topic1 << topic2 << topic3
@@ -113,9 +116,11 @@ subject2.topics << topic4
 topic1.subtopics << subtopic1 << subtopic2
 topic4.subtopics << subtopic3
 subtopic1.questions << question1 << question2 << question3 << question4
+subtopic2.questions << question5
 question1.answers << answer1
 question2.answers << answer2
 question3.answers << answer3
 question4.answers << answer4
+question5.answers << answer5
 
 

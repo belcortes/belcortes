@@ -66,19 +66,6 @@ class UsersController < ApplicationController
       render text: 'not saved'
     end
   end
-  def add_topic
-    @user = User.find(params[:id])
-    @topic = Topic.find(params[:topic_id])
-    unless @user.topics.include? @topic
-      if @user.topics.push(@topic)
-        render :json => @user
-      else
-        render text: 'not saved'
-      end
-    else
-      render text: 'not saved'
-    end
-  end
 
   private
   def user_params

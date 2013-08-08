@@ -10,6 +10,7 @@
   %br
   %br
   %br
+  %br
   - if current_user && current_user.admin?
     = link_to('edit', edit_subtopic_path(subtopic))
     = link_to('delete', subtopic_path(subtopic), method: :delete, confirm: 'Are you sure you want to delete this subtopic?')

@@ -94,6 +94,15 @@ class User < ActiveRecord::Base
       user_id: self.id)
     self.save!
   end
+
+  def is_finished_with?(topic)
+    topic.subtopics.each do |subtopic|
+      unless self.subtopics.include? subtopic
+        return false
+      end
+    end
+    true
+  end
   # has_secure_password
 
 

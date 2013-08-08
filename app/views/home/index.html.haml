@@ -1,5 +1,21 @@
-Welcome to Calcacademy!
-= link_to "Connect with Twitter", user_omniauth_authorize_path(:twitter)
-- if (twitter = current_user && current_user.identities.where(provider: 'twitter').first)
-  %div
-    <a href=#{twitter.url} target='_blank'>#{image_tag twitter.image}
+- if current_user
+  = link_to "Connect with Twitter", user_omniauth_authorize_path(:twitter)
+  - if (twitter = current_user && current_user.identities.where(provider: 'twitter').first)
+    %div
+      <a href=#{twitter.url} target='_blank'>#{image_tag twitter.image}
+
+%h3
+  Welcome to CalcAcademy!
+  %br
+  %br
+  Here you can develop, reinforce and test your knowledge of Calculus. 
+  %br
+  %br
+  What is Calculus?
+  %br
+  %br
+  Calculus is the mathematical study of change, typically applied to non-linear relationships. With calculus we can measure the slope of a curve and the accumulation of area underneath the curve. 
+  %br
+  %br
+  Calculus is the gateway to higher level mathematics and itself a powerful analytical tool in scientific inquiry. It was invented by Issac Newton to help him express his laws of motion and gravitation. 
+
