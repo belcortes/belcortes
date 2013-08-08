@@ -5,11 +5,6 @@ Subtopic.delete_all
 Question.delete_all
 Answer.delete_all
 
-# user1 = User.create(name: 'Zhao', email: 'zhao@gmail.com', password: 'pass123', password_confirmation: 'pass123')
-# user2 = User.create(name: 'Omar', email: 'omar@gmail.com', password: 'pass123', password_confirmation: 'pass123')
-# user3 = User.create(name: 'Dylan', email: 'dylan@gmail.com', password: 'pass123', password_confirmation: 'pass123')
-# user4 = User.create(name: 'Isabel', email: 'belcortes@gmail.com', password: 'pass123', password_confirmation: 'pass123', admin: true)
-
 user1 = User.create(name: 'Zhao', email: 'zhao@gmail.com', password: 'pass12345', password_confirmation: 'pass12345')
 user2 = User.create(name: 'Omar', email: 'omar@gmail.com', password: 'pass12345', password_confirmation: 'pass12345')
 user3 = User.create(name: 'Dylan', email: 'dylan@gmail.com', password: 'pass12345', password_confirmation: 'pass12345')
@@ -30,65 +25,10 @@ subtopic2 = Subtopic.create(name: 'EXPONENTS', badge: 'exponents.png')
 subtopic3 = Subtopic.create(name: 'DERIVATIVES', badge: 'http://i.ebayimg.com/t/Pi-25mm-badge-maths-geek-nerd-3-14-button-calculus-/06/!BzsNkw!CWk~$(KGrHqF,!jkEw4-0k,4hBM(IT1!79g~~_35.JPG')
 
 question1 = Question.create(question_number: 1, content: "LINEAR EQUATIONS @@IMAGE=question1_bold.jpg@@IMAGE-END")
-question2 = Question.create(question_number: 2, content: "Linear equations are the simplest equations that you'll deal with. You've probably already solved linear equations; you just didn't know it.
-Take the equation:
-  x + 2 = 3
-  The whole point is to get x by itself. In this case, we can subtract two from both sides and we get    x = 1
-    Here we can also see an important part of algebra, the Golden Rule of Algebra
-“what you do to one side of the equation, you have to do to the other”
-/\n/
-q - what is x?
-  3x + 5 = 15 - 2x
+question2 = Question.create(question_number: 2, content: "SOLVING LINEAR EQUATIONS @@IMAGE=question2.jpg@@IMAGE-END")  
+question3 = Question.create(question_number: 3, content:" SYSTEMS OF EQUATIONS @@IMAGE=question3_1.png@@IMAGE-END")
 
-")  
-
-question3 = Question.create(question_number: 3, content:"3 - Systems of linear equations
-
-Think back to linear equations. For instance, consider the linear equation y = 3x – 5. A 'solution' to this equation was any x, y-point that 'worked' in the equation. So (2, 1) was a solution because, plugging in 2 for x:
-3x – 5 = 3(2) – 5 = 6 – 5 = 1 
-1 = y
-Now consider the following two-variable system of linear equations:
-y = 3x – 2
-y = –x – 6
-Since the two equations above are in a system, we deal with them together at the same time. In particular, we can graph them together on the same axis system, like this:
-@@IMAGE=systems1.jpg@@IMAGE-END The solution to this system is the point where both lines intersect, like so: 
-@@IMAGE=systems2.jpg@@IMAGE-END
-There are a few ways to solve a system
-1 - if a question gives you a point, plug it in both equations, if both solutions are true then that point is the solution
-2 - if you are not given a point: write both in the basic linear equation format: 
-  y = mx+b
-  make both equal to each other:
-  ex: y = 2x+5, y=4x
-  y = y, 2x+5 = 4x
-  then solve for x
-  5 = 2x
-  5/2 = x
-          lastly plug in x into any of the equations and solve for y
-you will have two points and that is the solution for the system
-
-q - what is the solution for the following system of equations: 
-  x = 3 - y,
-           4x + 2y = 6
-           answer format (x,y)
-
-")
-
-question4 = Question.create(question_number: 4, content: "Requirements - exponents subtopic
-
-By now, you should be familiar with variables and exponents, and you may have dealt with expressions like 3x4 or 6x. Polynomials are sums of these 'variables and exponents' expressions.
-Polynomial terms have variables which are raised to whole-number exponents (or else the terms are just plain numbers); there are no square roots of variables, no fractional powers, and no variables in the denominator of any fractions. 
-This is an example of a typical polynomial:
-@@IMAGE=polynomials.jpg@@IMAGE-END
-The exponent of the leading term variable determines the degree of the polynomial. In the example above we can see that it’s  polynomial of second degree (the exponent of leading term is 2)
-
-q - which of the following expressions is a polynomial, and what is it’s degree?
-  a) 6x –2
-
-  b)  1/x2
-  
-  c) sqrt(x)
-  d) 4x2  
-
+question4 = Question.create(question_number: 4, content: "POLYNOMIALS @@IMAGE=question4.png@@IMAGE-END
 ")
 
 question5 = Question.create(question_number: 1, content:"What is 2^3?")
