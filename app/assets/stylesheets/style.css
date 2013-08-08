@@ -10,6 +10,12 @@ a, a:hover, a:visited {
   font-family: "helvetica neue";
 }
 
+#logo-pic{
+  height: 50px;
+  width: 30px;
+  float: left;
+}
+
 .intro {
   width: 80%;
   margin: 0 auto;
