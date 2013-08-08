@@ -50,12 +50,15 @@ a {
   color: white;
   margin-left: 40px;
 }
-
+body {
+  background-image: url('/images/pw_maze_white.png')
+}
 #main-container {
   width: 95%;
   margin: 0 auto;
   height: auto;
   font-family: helvetica;
+  
 }
 .navbar a {
   color: white;
