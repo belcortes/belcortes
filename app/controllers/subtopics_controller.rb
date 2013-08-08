@@ -1,5 +1,5 @@
 class SubtopicsController < ApplicationController
-  # before_action :ensure_admin, only: [:edit, :update, :destroy, :new, :create]
+  before_action :ensure_admin, only: [:edit, :update, :destroy, :new, :create]
   def index
     @subtopics = Subtopic.where(:topic_id => params[:topic_id])
   end

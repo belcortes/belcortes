@@ -20,10 +20,10 @@ class ApplicationController < ActionController::Base
   #   end
   # end
 
-  # private
-  #   def ensure_admin
-  #     unless current_user && current_user.admin?
-  #       render text: 'not authorized'
-  #   end
-  # end
+  private
+  def ensure_admin
+    unless current_user && current_user.admin?
+      render text: 'not authorized'
+    end
+  end
 end

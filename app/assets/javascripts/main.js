@@ -17,4 +17,9 @@ $(function() {
   $('.button').on('click', function() {
     $(this).bels_awesome_func();
   });
+
+    $('#logo-pic').on('mouseenter', function(){
+    Sonifizer_array([10, 10, 10, 1000], Sonifizer_play)
+  })
+
 });

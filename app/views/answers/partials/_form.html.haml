@@ -2,6 +2,6 @@
   = f.label :content
   = f.text_field :content
   = f.label :question
-  = f.collection_select(:question_id, Question.all, :id, :name)
+  = f.collection_select(:question_id, Question.all, :id, :content)
   = f.submit
 
