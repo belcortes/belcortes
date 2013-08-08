@@ -40,10 +40,12 @@ a {
 .topic, .subtopic, .subject {
   width: 90%;
   height: 60px;
-  border: 1px dashed gray;
+  background-color: #C2E4EB;
   margin: 0 auto;
   text-align: center;
   line-height: 60px;
+  font-family: "helvetica neue";
+  font-size: 20px
 }
 
 #user-email {
@@ -65,14 +67,14 @@ body {
   text-decoration: none;
 }
 
-.subject{
+/*.subject{
   width: 90%;
   height: 60px;
   border: 1px dashed gray;
   margin: 0 auto;
   text-align: center;
   line-height: 60px;
-}
+}*/
 
 .subtopic-id {
   height: 30px;
@@ -131,4 +133,5 @@ body {
 }
 #progressbar {
   margin-bottom: 30px;
+  background-color: #4BB1C3;
 }

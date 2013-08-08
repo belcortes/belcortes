@@ -17,19 +17,19 @@ user4 = User.create(name: 'Isabel', email: 'belcortes@gmail.com', password: 'pas
 
 
 
-subject1 = Subject.create(name: 'PreCalculus')
-subject2 = Subject.create(name: 'Calculus')
+subject1 = Subject.create(name: 'PRECALCULUS')
+subject2 = Subject.create(name: 'CALCULUS')
 
-topic1 = Topic.create(name: 'Intro to PreCalculus')
-topic2 = Topic.create(name: 'Functions')
-topic3 = Topic.create(name: 'Trigonometry')
-topic4 = Topic.create(name: 'Intro to Calculus')
+topic1 = Topic.create(name: 'INTRO TO PRECALCULUS')
+topic2 = Topic.create(name: 'FUNCTIONS')
+topic3 = Topic.create(name: 'TRIGONOMETRY')
+topic4 = Topic.create(name: 'INTRO TO CALCULUS')
 
-subtopic1 = Subtopic.create(name: 'Algebra', badge: 'algebra.jpg')
-subtopic2 = Subtopic.create(name: 'Exponents', badge: 'http://i.ebayimg.com/t/Pi-25mm-badge-maths-geek-nerd-3-14-button-calculus-/06/!BzsNkw!CWk~$(KGrHqF,!jkEw4-0k,4hBM(IT1!79g~~_35.JPG')
-subtopic3 = Subtopic.create(name: 'Derivatives', badge: 'http://i.ebayimg.com/t/Pi-25mm-badge-maths-geek-nerd-3-14-button-calculus-/06/!BzsNkw!CWk~$(KGrHqF,!jkEw4-0k,4hBM(IT1!79g~~_35.JPG')
+subtopic1 = Subtopic.create(name: 'ALGEBRA', badge: 'algebra.jpg')
+subtopic2 = Subtopic.create(name: 'EXPONENTS', badge: 'http://i.ebayimg.com/t/Pi-25mm-badge-maths-geek-nerd-3-14-button-calculus-/06/!BzsNkw!CWk~$(KGrHqF,!jkEw4-0k,4hBM(IT1!79g~~_35.JPG')
+subtopic3 = Subtopic.create(name: 'DERIVATIVES', badge: 'http://i.ebayimg.com/t/Pi-25mm-badge-maths-geek-nerd-3-14-button-calculus-/06/!BzsNkw!CWk~$(KGrHqF,!jkEw4-0k,4hBM(IT1!79g~~_35.JPG')
 
-question1 = Question.create(content: "A linear equation is an equation for a straight line.
+question1 = Question.create(question_number: 1, content: "A linear equation is an equation for a straight line.
 The basic format for a linear equation is:
 y = mx + b
 where m is the slope and b is the y-intercept
@@ -41,7 +41,7 @@ a) 2x + y = 5x + 3
   c) (x + 2)2x = 6
   d) x = 1
 ")
-question2 = Question.create(content: "Linear equations are the simplest equations that you'll deal with. You've probably already solved linear equations; you just didn't know it.
+question2 = Question.create(question_number: 2, content: "Linear equations are the simplest equations that you'll deal with. You've probably already solved linear equations; you just didn't know it.
 Take the equation:
   x + 2 = 3
   The whole point is to get x by itself. In this case, we can subtract two from both sides and we get    x = 1
@@ -53,7 +53,7 @@ q - what is x?
 
 ")  
 
-question3 = Question.create(content:"3 - Systems of linear equations
+question3 = Question.create(question_number: 3, content:"3 - Systems of linear equations
 
 Think back to linear equations. For instance, consider the linear equation y = 3x – 5. A 'solution' to this equation was any x, y-point that 'worked' in the equation. So (2, 1) was a solution because, plugging in 2 for x:
 3x – 5 = 3(2) – 5 = 6 – 5 = 1 
@@ -84,7 +84,7 @@ q - what is the solution for the following system of equations:
 
 ")
 
-question4 = Question.create(content: "Requirements - exponents subtopic
+question4 = Question.create(question_number: 4, content: "Requirements - exponents subtopic
 
 By now, you should be familiar with variables and exponents, and you may have dealt with expressions like 3x4 or 6x. Polynomials are sums of these 'variables and exponents' expressions.
 Polynomial terms have variables which are raised to whole-number exponents (or else the terms are just plain numbers); there are no square roots of variables, no fractional powers, and no variables in the denominator of any fractions. 

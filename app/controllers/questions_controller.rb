@@ -3,6 +3,7 @@ class QuestionsController < ApplicationController
   def index
     @subtopic = Subtopic.find_by_name(params[:subtopic_name])
     @questions = @subtopic.questions
+    @questions = Question.order("questions.question_number ASC")
     # @questions = Question.where(:subtopic_id => params[:subtopic_id])
   end
 
