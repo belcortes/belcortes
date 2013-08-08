@@ -35,7 +35,7 @@ function scan_for_images(element){
     var total_length = matches[i].length
     var new_image = matches[i].slice(8,total_length-11)
     };
-    question_string_new = question_string.replace(patt,"<img src='/images/"+new_image+"'/>")
+    question_string_new = question_string.replace(patt,"<img class='scan-image' src='/images/"+new_image+"'/>")
     element.html(question_string_new)
   } else {
     console.log('no images found')

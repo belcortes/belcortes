@@ -103,6 +103,15 @@ class User < ActiveRecord::Base
     end
     true
   end
+
+  def finished_with?(subject)
+    subject.topics.each do |topic|
+      unless self.topics.include? topic
+        return false
+      end
+    end
+    true
+  end
   # has_secure_password
 
 

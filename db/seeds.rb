@@ -29,18 +29,7 @@ subtopic1 = Subtopic.create(name: 'ALGEBRA', badge: 'algebra.png')
 subtopic2 = Subtopic.create(name: 'EXPONENTS', badge: 'exponents.png')
 subtopic3 = Subtopic.create(name: 'DERIVATIVES', badge: 'http://i.ebayimg.com/t/Pi-25mm-badge-maths-geek-nerd-3-14-button-calculus-/06/!BzsNkw!CWk~$(KGrHqF,!jkEw4-0k,4hBM(IT1!79g~~_35.JPG')
 
-question1 = Question.create(question_number: 1, content: "A linear equation is an equation for a straight line.
-The basic format for a linear equation is:
-y = mx + b
-where m is the slope and b is the y-intercept
-Slope = One of the most important properties of a straight line is in how it angles away from the horizontal. This concept is reflected in something called the 'slope' of the line. The formula for the slope of a line is @@IMAGE=slope_formula.jpg@@IMAGE-END where (x1, y1) and (x2, y2) are two points in ordered pair form.                                                                                         
-                    Which of these is not a linear equation?
-
-a) 2x + y = 5x + 3
-  b) y = 0
-  c) (x + 2)2x = 6
-  d) x = 1
-")
+question1 = Question.create(question_number: 1, content: "LINEAR EQUATIONS @@IMAGE=question1_bold.jpg@@IMAGE-END")
 question2 = Question.create(question_number: 2, content: "Linear equations are the simplest equations that you'll deal with. You've probably already solved linear equations; you just didn't know it.
 Take the equation:
   x + 2 = 3
