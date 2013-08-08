@@ -4,10 +4,12 @@
   = link_to subtopics_path+"?topic_id=#{topic.id}" do
     .topic{class: "#{'finished' if current_user.is_finished_with?(topic)}"}
       = topic.name
-  %br
-  %br
-  %br
-  %br
   - if current_user && current_user.admin?
-    = link_to('edit', edit_topic_path(topic))
-    = link_to('delete', topic_path(topic), method: :delete, confirm: 'Are you sure you want to delete this topic?')
+    .admin
+      = link_to('edit', edit_topic_path(topic), class:'edit')
+      = link_to('delete', topic_path(topic), class:'delete', method: :delete, confirm: 'Are you sure you want to delete this topic?')
+  %br
+  %br
+  %br
+  %br
+  

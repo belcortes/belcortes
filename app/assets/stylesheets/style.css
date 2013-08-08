@@ -10,6 +10,25 @@ a, a:hover, a:visited {
   font-family: "helvetica neue";
 }
 
+.intro {
+  width: 80%;
+  margin: 0 auto;
+  font-family: "helvetica neue"
+}
+
+.edit, .delete, .edit:visited, .edit:hover, .delete:visited, .delete:hover {
+  color: black;
+}
+.admin {
+  margin: 0 auto;
+  height: 30px;
+  width: 90%;
+  text-align: center;
+  background-color: #D5EDF1;
+  line-height: 30px;
+  box-shadow: 5px 5px 5px #888888;
+}
+
 #logo {
   float: left;
   color: white;
@@ -40,24 +59,27 @@ a, a:hover, a:visited {
 }
 .topic, .subtopic, .subject {
   width: 90%;
-  height: 60px;
-  background-color: #f2b8b2;
+  height: 80px;
+  background-color: #ECF3F9;
   margin: 0 auto;
   text-align: center;
-  line-height: 60px;
+  line-height: 80px;
   font-family: "helvetica neue";
   font-size: 20px;
-  color: white;
+  color: #e94c43;
+  /*#073a59;*/
+  box-shadow: 5px 5px 5px #888888;
 }
 .topic:hover, .subtopic:hover, .subject:hover {
   background-color: #e94c43;
+  color: white;
 }
 
 #user-email {
   color: white;
   margin-left: 40px;
 }
-h3 {
+h3, h1 {
   font-family: "helvetica neue"
 }
 body {
@@ -119,9 +141,11 @@ body {
 }
 .finished {
   background-color: #9cbc62;
+  color: white;
 }
 .finished:hover {
   background-color: #4a8134;
+  color: white;
 }
 #progressbar {
   margin-bottom: 30px;
