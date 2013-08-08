@@ -24,10 +24,18 @@
           <%= link_to 'progress', user_path(current_user), :id => 'user-progress' %>
           <%= link_to 'logout', destroy_user_session_path, method: :delete%>
         <% end %>
-          <a href="mailto:belcortes@gmail.com" id='contact'>contact</a>
+        <a href="mailto:belcortes@gmail.com" id='contact'>contact</a>
+        <% if current_user && current_user.admin? %>
+          <%= link_to 'subject', new_subject_path, :id => 'user-progress' %>
+          <%= link_to 'topic', new_topic_path, :id => 'user-progress' %>
+          <%= link_to 'subtopic', new_subtopic_path, :id => 'user-progress' %>
+          <%= link_to 'question', new_question_path, :id => 'user-progress' %>
+          <%= link_to 'answer', new_answer_path, :id => 'user-progress' %>
+        <% end %>
         <% if current_user %> 
           <span id='user-email'>
             <%= current_user.email %>
+            <%= current_user.score %>
           </span>
         <% end %>
       </div>

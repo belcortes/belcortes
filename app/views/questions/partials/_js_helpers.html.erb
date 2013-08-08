@@ -82,7 +82,7 @@ function add_answer(data, button, question_id){
         success: function(data){
           $('.subtopic-id').append(data)
           setTimeout(function () {
-            window.location.href = "/subjects";
+            window.location.href = "/my_scope/users/"+<%= current_user.id %>;
           }, 1000);
           var badge = $('<img class="badge">'); 
           badge.attr('src', data.html_safe());

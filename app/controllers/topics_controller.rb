@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-  before_action :ensure_admin, only: [:edit, :update, :destroy, :new, :create]
+  # before_action :ensure_admin, only: [:edit, :update, :destroy, :new, :create]
   def index
     @subject = Subject.find(params[:subject_id])
     @topics = @subject.topics

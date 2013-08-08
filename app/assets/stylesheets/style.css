@@ -66,13 +66,18 @@ a, a:hover, a:visited {
   line-height: 80px;
   font-family: "helvetica neue";
   font-size: 20px;
-  color: #e94c43;
+  color: #4BB1C3;
   /*#073a59;*/
   box-shadow: 5px 5px 5px #888888;
 }
 .topic:hover, .subtopic:hover, .subject:hover {
   background-color: #e94c43;
   color: white;
+  -webkit-transition: background-color 0.3s ease-in;
+  -moz-transition: background-color 0.3s ease-in;
+  -o-transition: background-color 0.3s ease-in;
+  -ms-transition: background-color 0.3s ease-in;
+  transition: background-color 0.3s ease-in;
 }
 
 #user-email {
@@ -81,6 +86,9 @@ a, a:hover, a:visited {
 }
 h3, h1 {
   font-family: "helvetica neue"
+}
+h1 {
+  color: #FF6969;
 }
 body {
   background-image: url('/images/linedpaper.png')
@@ -146,6 +154,11 @@ body {
 .finished:hover {
   background-color: #4a8134;
   color: white;
+  -webkit-transition: background-color 0.3s ease-in;
+  -moz-transition: background-color 0.3s ease-in;
+  -o-transition: background-color 0.3s ease-in;
+  -ms-transition: background-color 0.3s ease-in;
+  transition: background-color 0.3s ease-in;
 }
 #progressbar {
   margin-bottom: 30px;

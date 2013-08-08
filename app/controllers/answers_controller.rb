@@ -1,17 +1,18 @@
 class AnswersController < ApplicationController
-  before_action :ensure_admin, only: [:edit, :update, :destroy, :new, :create]
+  # before_action :ensure_admin, only: [:edit, :update, :destroy, :new, :create]
   def index
-    @question = Question.find_by_id(params[:question_id])
-    @answers = @question.answers 
+    @answers = Answer.where(:question_id => params[:question_id])
+    # @question = Question.find_by_id(params[:question_id])
+    # @answers = @question.answers 
     render :json => @answers.to_json
   end
 
   def edit
-    @answer = Question.find(params[:id])
+    @answer = Answer.find(params[:id])
   end
 
   def update
-    @answer = Question.find(params[:id])
+    @answer = Answer.find(params[:id])
     if @answer.update_attributes(answer_params)
       redirect_to answers_path
     else
@@ -20,10 +21,10 @@ class AnswersController < ApplicationController
   end
 
   def new
-    @answer = Question.new
+    @answer = Answer.new
   end
   def create
-    @answer = Question.new(answer_params)
+    @answer = Answer.new(answer_params)
     if @answer.save
       redirect_to answers_path
     else
@@ -37,7 +38,7 @@ class AnswersController < ApplicationController
     redirect_to :back
   end
 
-    private
+  private
   def answer_params
     params.require(:answer).permit(:content, :question_id)
   end
