@@ -5,7 +5,8 @@ a {
 .navbar {
   height: 50px;
   width: 100%;
-  background-color: #4BB9C3;
+  background-color: #4BB1C3;
+  font-family: "helvetica neue";
 }
 
 #logo {
@@ -24,7 +25,7 @@ a {
   color: white;
   line-height: 50px;
   margin-right: 20px;
-  font-family: helvetica;
+  
   font-size: 20px;
 }
 #main-links{

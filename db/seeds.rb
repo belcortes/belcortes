@@ -84,20 +84,38 @@ q - what is the solution for the following system of equations:
 
 ")
 
-question4 = Question.create(content: " ")
+question4 = Question.create(content: "Requirements - exponents subtopic
+
+By now, you should be familiar with variables and exponents, and you may have dealt with expressions like 3x4 or 6x. Polynomials are sums of these 'variables and exponents' expressions.
+Polynomial terms have variables which are raised to whole-number exponents (or else the terms are just plain numbers); there are no square roots of variables, no fractional powers, and no variables in the denominator of any fractions. 
+This is an example of a typical polynomial:
+@@IMAGE=polynomials.jpg@@IMAGE-END
+The exponent of the leading term variable determines the degree of the polynomial. In the example above we can see that it’s  polynomial of second degree (the exponent of leading term is 2)
+
+q - which of the following expressions is a polynomial, and what is it’s degree?
+  a) 6x –2
+
+  b)  1/x2
+  
+  c) sqrt(x)
+  d) 4x2  
+
+")
 
 answer1 = Answer.create(content: 'c', is_correct: true)
 answer2 = Answer.create(content: 2, is_correct: true)
 answer3 = Answer.create(content: '(0,3)', is_correct: true)
+answer4 = Answer.create(content: 'd', is_correct: true)
 
 
 subject1.topics << topic1 << topic2 << topic3
 subject2.topics << topic4
 topic1.subtopics << subtopic1 << subtopic2
 topic4.subtopics << subtopic3
-subtopic1.questions << question1 << question2 << question3
+subtopic1.questions << question1 << question2 << question3 << question4
 question1.answers << answer1
 question2.answers << answer2
 question3.answers << answer3
+question4.answers << answer4
 
 
