@@ -1,7 +1,9 @@
 / = render partial: '/questions/partials/js_helpers'
 #user-progress
   - if current_user
+    
     %h2
+      YOUR PROGRESS SO FAR...
       = @user.name
     %h4
       Score:

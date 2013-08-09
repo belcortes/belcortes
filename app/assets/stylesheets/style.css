@@ -13,6 +13,7 @@ a, a:hover, a:visited {
   background-color: #4BB1C3;
   font-family: "helvetica neue";
   padding-bottom: 3px;
+  /*position: fixed;*/
 }
 
 #logo-pic{
@@ -28,6 +29,10 @@ a, a:hover, a:visited {
   bottom: 0;
 }
 
+#widget {
+  float: right;
+}
+
 .intro {
   width: 80%;
   margin: 0 auto;
@@ -36,6 +41,24 @@ a, a:hover, a:visited {
 
 .edit, .delete, .edit:visited, .edit:hover, .delete:visited, .delete:hover {
   color: black;
+}
+
+.notice, .alert {
+  font-family: "helvetica neue";
+  background-color: #D5EDF1;
+}
+
+#my_logo{
+  height: 500px; 
+  width: 300px;
+  float: left;
+}
+#animated-logo{
+  height: 500px; 
+  width: 300px;
+  transform: translate(50px,100px);
+  -ms-transform: translate(50px,100px); /* IE 9 */
+  -webkit-transform: translate(50px,100px); /* Safari and Chrome */
 }
 .admin {
   margin: 0 auto;
@@ -85,7 +108,6 @@ a, a:hover, a:visited {
   font-family: "helvetica neue";
   font-size: 20px;
   color: #4BB1C3;
-  /*#073a59;*/
   box-shadow: 5px 5px 5px #888888;
 }
 .topic:hover, .subtopic:hover, .subject:hover {
@@ -102,7 +124,7 @@ a, a:hover, a:visited {
   color: white;
   margin-left: 40px;
 }
-h3, h1 {
+h4, h1, h2 {
   font-family: "helvetica neue"
 }
 h1 {
@@ -169,6 +191,17 @@ body {
 .hidden {
   display: none;
 }
+
+.user-name {
+  width: 100%;
+  height: 50px;
+  background-color: #C2E4EB;
+  text-align: center;
+  line-height: 50px;
+  bottom: 0;
+  color: ;
+}
+
 .finished {
   background-color: #9cbc62;
   color: white;
@@ -186,6 +219,7 @@ body {
   margin-bottom: 30px;
   background: #C2E4EB;
   border: none;
+  border: 1px dashed gray;
 }
 .ui-progressbar .ui-progressbar-value {
   background: #4BB1C3 url(images/ui-bg_highlight-soft_75_cccccc_1x100.png) 50% 50% repeat-x;
