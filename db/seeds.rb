@@ -26,7 +26,7 @@ subtopic3 = Subtopic.create(name: 'DERIVATIVES', badge: 'http://i.ebayimg.com/t/
 
 question1 = Question.create(question_number: 1, content: "LINEAR EQUATIONS @@IMAGE=question1_bold.jpg@@IMAGE-END")
 question2 = Question.create(question_number: 2, content: "SOLVING LINEAR EQUATIONS @@IMAGE=question2.jpg@@IMAGE-END")  
-question3 = Question.create(question_number: 3, content:" SYSTEMS OF EQUATIONS @@IMAGE=question3_1.png@@IMAGE-END")
+question3 = Question.create(question_number: 3, content:" SYSTEMS OF EQUATIONS @@IMAGE=question3.jpg@@IMAGE-END")
 
 question4 = Question.create(question_number: 4, content: "POLYNOMIALS @@IMAGE=question_4.png@@IMAGE-END
 ")
