@@ -15,6 +15,20 @@ a, a:hover, a:visited {
   padding-bottom: 3px;
   /*position: fixed;*/
 }
+#score {
+  /*height: 40px;*/
+  /*width: 60px;*/
+  border: 1px dashed white;
+  /*float: right;*/
+  /*text-align: center;*/
+  /*line-height: 45px;*/
+  /*margin-left: 20px;*/
+}
+
+.color {
+  color: #FF6969;
+  font-family: "helvetica neue"
+}
 
 #logo-pic{
   height: 50px;
@@ -27,6 +41,9 @@ a, a:hover, a:visited {
   background-color: #FF6969;
   position: absolute;
   bottom: 0;
+  color: white;
+  line-height: 50px;
+  padding-left: 20px;
 }
 
 #widget {
@@ -54,11 +71,27 @@ a, a:hover, a:visited {
   float: left;
 }
 #animated-logo{
-  height: 500px; 
-  width: 300px;
-  transform: translate(50px,100px);
-  -ms-transform: translate(50px,100px); /* IE 9 */
-  -webkit-transform: translate(50px,100px); /* Safari and Chrome */
+  height: 400px; 
+  width: 350px;
+  float: right;
+  margin-right: 300px;
+  /*transform: translate(50px,100px);*/
+  /*-ms-transform: translate(50px,100px); /* IE 9 */
+  /*-webkit-transform: translate(50px,100px); /* Safari and Chrome */
+}
+/*#login:hover {
+  -webkit-transform: translate(25px, 50px);
+  -moz-transform: translate(25px, 50px);
+  -o-transform: translate(25px, 50px);
+  -ms-transform: translate(25px, 50px);
+  transform: translate(25px, 50px);
+}*/
+#login {
+  float: left;
+  margin-left: 70px;
+}
+.row #animation {
+  height: 600px;
 }
 .admin {
   margin: 0 auto;
@@ -101,7 +134,7 @@ a, a:hover, a:visited {
 .topic, .subtopic, .subject {
   width: 90%;
   height: 80px;
-  background-color: #ECF3F9;
+  background-color: #C9EAED;
   margin: 0 auto;
   text-align: center;
   line-height: 80px;
@@ -123,6 +156,7 @@ a, a:hover, a:visited {
 #user-email {
   color: white;
   margin-left: 40px;
+  /*display: inline-block;*/
 }
 h4, h1, h2 {
   font-family: "helvetica neue";
